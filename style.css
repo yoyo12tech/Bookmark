@@ -33,7 +33,7 @@ body{
     padding: 2rem ;
     position: relative;
     z-index: 3;
-    width:min(30rem,70%);
+    width:min(31rem,85%);
     border-radius: 0.8rem;
     box-shadow: 0 0 15px red;
 }
