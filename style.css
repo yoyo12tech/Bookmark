@@ -264,7 +264,7 @@ form>button{
     overflow: hidden;
     position: relative;
     z-index: 1;
-    border: 1px solid black;
+    border: 1px solid #191B21;
 
 }
 form>button::before{
