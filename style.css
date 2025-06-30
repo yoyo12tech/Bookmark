@@ -1,0 +1,384 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+a{
+    color: inherit;
+    text-decoration: none;
+}
+::selection{
+    background-color: cyan;
+    color: black;
+}
+body{
+    background-color:#23272F;
+    color: white;
+    width: 90%;
+    margin: auto;
+    position: relative;
+    overflow-x:hidden;
+}
+.overlay{
+    position: absolute;
+    z-index: 2;
+    height: 100vh;
+    width: 120%;
+    left: 50%;transform: translateX(-50%);
+    background-color: rgba(255, 53, 53, 0.151);
+    display: flex; justify-content: center;align-items: center;
+}
+.overlay>.modal-warning{
+    background-color: black;
+    padding: 2rem ;
+    position: relative;
+    z-index: 3;
+    width:min(30rem,70%);
+    border-radius: 0.8rem;
+    box-shadow: 0 0 15px red;
+}
+.overlay>.modal-warning>.collection{
+    width: 40%;
+}
+.overlay>.modal-warning>.collection>.circle{
+    width: 1rem;height: 1rem; display: inline-block;
+    background-color: red; border-radius: 50%; cursor: pointer;
+}
+.circle:nth-child(2){
+    background-color: orange !important;
+    margin: 0rem 0.3rem;
+}
+.circle:nth-child(3){
+    background-color: green !important;
+}
+.overlay>.modal-warning>.close-button{
+    position: absolute;
+    right: 2rem;
+    top:10%;
+    color:white;
+    font-size: 1.5rem;
+    transition: 0.3s ease-in-out;
+}
+.overlay>.modal-warning>.close-button :hover{
+    color: red;
+
+}
+.overlay>.modal-warning>.close-button>input{
+    display: none;
+}
+
+body:has(#close:checked) .overlay{
+    display: none;
+}
+
+.overlay>.modal-warning>h2{
+    margin-top: 1.5rem ;
+}
+.overlay>.modal-warning>h3{
+    margin-top: 1.25rem ;
+
+}
+.overlay>.modal-warning>ul{
+    list-style: none;
+    margin-top: 1.25rem;
+}
+.overlay>.modal-warning>ul>li{
+    margin: 1rem 0rem;
+    font-size: 1.1rem;
+    text-decoration: underline;
+
+}
+.overlay>.modal-warning>ul>li>i{
+    margin-right: 1rem;
+    font-weight: 600;
+    color: cyan;
+}
+
+
+
+
+
+
+h1{
+    font-size: 3rem;
+    text-align: center;
+    padding: 1rem;
+    background: linear-gradient(to right, rgb(101, 191, 255) 40%, rgb(45, 255, 255) 60%);
+    background-clip: text;
+    background-size: 130% 130%;
+    position: center center;
+    color: transparent;
+    animation: move-text-bg 3s ease-in-out alternate infinite;
+}
+@keyframes move-text-bg{
+    0%{
+        background-position: 0% 0%;
+    }
+    50%{
+        background-position: 100% 100%;
+    }
+    100%{
+       background-position: 0% 0%;
+    }
+}
+hr{
+    border: 0px solid red;
+    height: 3px;
+    border-radius: 3px;
+    background: linear-gradient(to right, rgb(101, 191, 255) 40%, rgb(45, 255, 255) 60%);
+    animation: move-text-bg 1s ease-in-out alternate infinite;
+    background-size: 130% 130%;
+    position: center center;
+    margin-bottom: 1.4rem;
+}
+h4{
+    font-size: 1.2rem;
+    text-align: center;
+    background: linear-gradient( rgb(101, 255, 255) 40%, rgb(164, 255, 255) 60%);
+    background-clip: text;
+    margin-bottom: 1.5rem;
+    color: transparent;
+    animation: move-text-bg 1s ease-in-out alternate infinite;
+    background-size: 130% 130%;
+    position: center center;
+}
+h4> i:nth-child(1){
+    padding-right: 1rem;
+}
+h4> i:nth-child(2){
+    padding-left: 1rem;
+}
+form{
+    display: flex;flex-direction: column;justify-content: center;align-items:left;
+    padding: 1rem 0.3rem;
+}
+form>label{
+    margin-bottom: 0.7rem;
+    font-size: 1.2rem;
+    background: linear-gradient( rgb(101, 255, 255) 40%, rgb(164, 255, 255) 60%);
+    background-clip: text;
+    color: transparent;
+}
+form>label>i{
+    margin-right: 1rem;
+}
+form .input-wrapper{
+    position: relative;
+    margin-bottom: 1rem;
+
+}
+form .input-wrapper i:nth-of-type(1){
+    position: absolute;
+    right:5%; bottom: 35%;
+    color: red;
+    display: none;
+}
+form .input-wrapper i:nth-of-type(2){
+    position: absolute;
+    right:5%; bottom: 35%;
+    color: greenyellow;
+    display: none;
+
+}
+
+/* form .input-wrapper i:nth-child(2){
+    position: absolute;
+    right:5%; bottom: 35%;
+    color: pink;
+}
+form .input-wrapper i:nth-child(3){
+    position: absolute;
+    right:2%; bottom: 35%;
+    color: cyan;
+} */
+
+
+
+
+form input{
+    position: relative;
+    padding: 0.9rem;
+    border-radius: 0.5rem;
+    font-size: 0.9rem;
+    width: 100%;
+    border: none;
+    outline: none;
+    background-color: rgb(18, 18, 18);
+    color: cyan;
+    transition: 0.3s ease-in-out;
+
+}
+form input::placeholder{
+    background: linear-gradient( rgb(101, 255, 255) 40%, rgb(164, 255, 255) 60%);
+    background-clip: text;
+    color: transparent;
+    font-size: 0.9rem;
+}
+form input:focus{
+    box-shadow: 0px 0px 10px cyan;
+}
+form .error::placeholder{
+    color: red
+}
+form .error:focus{
+    box-shadow: 0px 0px 10px red;
+    color: red;
+    animation: shake-it 0.2s ease-in infinite;
+}
+@keyframes shake-it{
+    from{
+        transform: translate(2px,2px);
+    }
+    to{
+        transform: translate(0px,-0px);
+    }
+}
+form .success::placeholder{
+    color: red
+}
+form .success:focus{
+    box-shadow: 0px 0px 10px lime;
+    color: lime;
+}
+
+
+form>button{
+    padding: 0.7rem;
+    background-color: rgb(18, 18, 18);
+    color: rgb(255, 255, 255);
+    font-size: 0.9rem;
+    color: cyan;
+    width: 8rem;
+    outline: none;
+    border: none;
+    border-radius: 1rem; 
+    margin: auto;
+    transition: 0.3s ease-in-out;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    border: 1px solid black;
+
+}
+form>button::before{
+    content:"";
+    position: absolute;
+    width: 20%;height: 110%;
+    left: -50%;bottom: 5%;
+    background: linear-gradient(120deg,rgba(255, 255, 255, 0) 40%,cyan 50%,rgba(0, 0, 0, 0) 60%);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 190% 190%;
+    z-index: 2;
+
+}
+form>button:hover{
+    box-shadow: 0px 0px 5px cyan;
+
+}
+form>button:hover::before {
+    animation:shine 0.6s ease-in-out;
+}
+@keyframes shine{
+    0%{
+        left:-40%;
+    }
+    100%{
+        left: 100%;
+    }
+}
+
+table{
+    box-shadow: 0px 0px 10px rgb(0, 0, 0);
+    padding: 0.5rem;
+    width: 100%;
+    background-color:rgb(18, 18, 18);
+    color: cyan;
+    border-radius: 0.4rem;
+    border-collapse: separate;
+    border-spacing: 0 0.2rem; /* 1rem vertical gap, 0 horizontal gap */
+}
+
+table thead{
+    font-size: 1.2rem;
+    color: cyan;
+    margin-bottom: 2rem;
+    border:1px solid red;
+    border-bottom: 1rem solid cyan;
+}
+table>tbody>.line-seprator{
+    width: 50% !important;
+}
+table>tbody>.line-seprator>td{
+    background-color:cyan;
+    width: 80%;height: 2px;
+
+}
+table tbody{
+    color: white;
+    text-align: center;
+}
+
+
+.visit>a{
+    background-color: rgb(53, 242, 255);
+    display: inline-block;
+    padding: 0.5rem 1.3rem;
+    border-radius: 0.5rem;
+    font-size: 0.9rem;
+    color: #23272F;
+    transition: 0.3s ease-in-out;
+}
+.visit>a>i{
+    margin-right: 0.4rem;
+}
+.visit:hover a{
+    color: rgb(0, 143, 143);
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 5px cyan;
+
+}
+#delete>button{
+    background: red;
+    padding: 0.5rem 1.3rem;
+    border-radius: 0.5rem;
+    border: none;
+    outline: none;
+    font-size: 0.9rem;
+    color: white;
+    transition: 0.3s ease-in-out;
+}
+#delete>button>i{
+    margin-right: 0.4rem;
+
+}
+#delete>button:hover{
+    background: rgb(255, 255, 255);
+    color: red;
+    box-shadow: 0px 0px 5px red;
+}
+    
+
+
+
+/* Small devices*/
+@media (max-width: 767.98px) {
+  /* Your styles here */
+  html{
+    font-size: 15px;
+  }
+  
+}
+/* Extra small devices */
+@media (max-width: 575.98px) {
+  /* Your styles here */
+  html {
+    font-size: 14.5px;
+  }
+  body{
+    width: 95%;
+  }
+  
+}
+
+

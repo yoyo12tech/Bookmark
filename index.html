@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./bookmark-ribbon.png" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/f90c352c4d.js" crossorigin="anonymous"></script><!--CDN (CONTENT DELEVERY NETWORK)-->
+    <link rel="stylesheet" href="style.css">
+    <title>Bookmarker</title>
+</head>
+<body>
+    <div class="overlay">
+        <div class="modal-warning">
+            <div class="collection">
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+            </div>
+            <div class="close-button">
+                <label for="close"><i class="fa-solid fa-xmark"></i></label>
+                <input type="checkbox" name="close" id="close" checked>
+            </div>
+            <h2>Site Name or Url is not valid!</h2>
+            <h3>Please follow the rules below:</h3>
+            <ul>
+                <li><i class="fa-solid fa-triangle-exclamation"></i>Site name must contain at least 3 characters!</li>
+                <li><i class="fa-solid fa-triangle-exclamation"></i>Site URL must be a valid one!</li>
+            </ul>
+        </div>
+    </div>
+    <h1>Bookmarker</h1>
+    <hr>
+    <h4><i class="fa-solid fa-bookmark"></i>Bookmark your favorite sites<i class="fa-solid fa-bookmark"></i></h4>
+    <form>
+        <label for="s-name">
+            <i class="fa-solid fa-book-bookmark">
+            </i>Site Name
+        </label>
+        <div class="input-wrapper">
+            <input type="text" id="s-name" name="s-name" placeholder="Bookmarker" onkeyup="isValidName()">
+            <i id="error-i" class="fa-solid fa-circle-exclamation"></i>
+            <i id="success-i" class="fa-solid fa-circle-check"></i>
+        </div>
+        <label for="s-url">
+            <i class="fa-solid fa-link">
+            </i>Site URL
+        </label>
+        <div class="input-wrapper">
+            <input type="text" id="s-url" name="s-url" placeholder="Website URL" onkeyup="isValidUrl()">
+            <i id="error-i2" class="fa-solid fa-circle-exclamation"></i>
+            <i id="success-i2" class="fa-solid fa-circle-check"></i>
+        </div>
+        <button type="button" onclick="addBookmark()"> Add Bookmark</button>
+    </form>
+    <hr>
+    <table>
+        <thead>
+            <tr>
+            <th>Index</th>
+            <th>Website Name</th>
+            <th>Visit</th>
+            <th>Delete</th>
+            </tr>
+            <tr><td colspan="100%"></td></tr>
+            <tr><td colspan="100%"></td></tr>
+            <tr><td colspan="100%"></td></tr>
+            <tr><td colspan="100%"></td></tr>
+            <tr><td colspan="100%"></td></tr>
+        </thead>
+        <tbody id="tBody">
+            <tr class="line-seprator"><td colspan="80%"></td></tr>
+
+            
+        </tbody>
+    </table>
+
+
+    
+
+
+    <script src="./main.js"></script>
+</body>
+</html>
