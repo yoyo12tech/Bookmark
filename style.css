@@ -91,7 +91,7 @@ body:has(#close:checked) .overlay{
 .overlay>.modal-warning>ul>li>i{
     margin-right: 1rem;
     font-weight: 600;
-    color: cyan;
+    color: red;
 }
 
 
