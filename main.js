@@ -11,7 +11,7 @@ displayBookmarks();
 
 
 function isValidName(){
-    const siteNamePattern=/^\w{3,}$/;
+    const siteNamePattern=/^.{3,25}$/;
     var result = siteNamePattern.test(bookmark.value.trim());
 
     bookmark.classList.remove("error", "success");
